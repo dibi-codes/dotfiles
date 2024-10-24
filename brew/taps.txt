@@ -1,0 +1,14 @@
+azhuchkov/homebrew-tools
+azure/homebrew-kubelogin
+cmacrae/homebrew-formulae
+danielgtaylor/homebrew-restish
+derailed/homebrew-popeye
+FelixKratz/homebrew-formulae
+fluxcd/homebrew-tap
+go-swagger/homebrew-go-swagger
+hashicorp/homebrew-tap
+johanhaleby/homebrew-kubetail
+k0sproject/homebrew-tap
+koekeishiya/homebrew-formulae
+metalbear-co/homebrew-mirrord
+siderolabs/homebrew-tap
