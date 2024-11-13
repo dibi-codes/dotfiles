@@ -142,8 +142,8 @@ export EDITOR="vim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wget='curl -O'
 alias fastcommit='git commit . -m "$(curl -s https://whatthecommit.com/index.txt)"'
-alias pwgencp='echo -n "$(pwgen -scn 32 1)" | pbcopy'
-alias ls="gls --color=always"
+command -v pwgen >/dev/null && alias pwgencp='echo -n "$(pwgen -scn 32 1)" | pbcopy'
+command -v gls >/dev/null && alias ls="gls --color=always"
 
 {{- if eq .chezmoi.os "darwin" }}
 # yay brew
