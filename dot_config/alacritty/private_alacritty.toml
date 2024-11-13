@@ -27,7 +27,7 @@ TERM = "xterm-256color"
 EDITOR = "/usr/bin/vim"
 
 [window]
-decorations = "full" # "buttonless"
+decorations = "buttonless"
 dynamic_padding = true
 padding.x = 0
 padding.y = 0
