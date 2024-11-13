@@ -1,0 +1,19 @@
+# This is Git's per-user configuration file.
+[core]
+        excludesfile = "~/.gitignore"
+[user]
+        name = {{ .name | quote }}
+        email = {{ .email | quote }}
+        signingkey = {{ .signingkey | quote }}
+[commit]
+        gpgsign = true
+[pull]
+        rebase = true
+[gpg]
+	program = gpg2
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[init]
+	defaultBranch = main
