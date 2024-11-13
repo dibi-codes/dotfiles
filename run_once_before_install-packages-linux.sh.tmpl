@@ -2,6 +2,6 @@
 #!/bin/bash
 
 {{ if eq .chezmoi.osRelease.id "arch" }}
-sudo pacman -S --noconfirm {{ .packages.linux.arch | join " " }}
+sudo pacman -Sy --noconfirm {{ .packages.linux.arch | join " " }}
 {{ end -}}
 {{ end -}}
