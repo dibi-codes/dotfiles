@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+{{   if eq .chezmoi.osRelease.id "arch" }}
+sudo pacman -S --noconfirm - <<EOF
+{{ range .packages.linux.arch -}}
+{{ . }}
+{{ end -}}
+EOF
+{{ end -}}
+{{ end -}}

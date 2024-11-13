@@ -160,6 +160,10 @@ packages:
       - "yubico-yubikey-manager"
       - "yubico-yubikey-personalization-gui"
       - "yubico-yubikey-piv-manager"
-    mas:
-      - name: AusweisApp
-        id: TODO
+  linux:
+    arch:
+      - alacritty
+      - curl
+      - git
+      - vim
+      - zsh
