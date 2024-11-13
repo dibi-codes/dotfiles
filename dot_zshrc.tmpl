@@ -101,7 +101,11 @@ plugins=(
   azurerepos
   fino-vault)
 
+{{- if eq .chezmoi.os "darwin" }}
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+{{- else if eq .chezmoi.os "linux" }}
+FPATH="/usr/share/zsh/site-functions:${FPATH}"
+{{- end}}
 
 source $ZSH/oh-my-zsh.sh
 
@@ -174,13 +178,12 @@ KUBE_PS1_PREFIX=[
 KUBE_PS1_SUFFIX=]
 #RPROMPT='$(kube_ps1)'
 
-# K aliase
-compdef kubecolor=kubectl
-
-alias kubectl=kubecolor
-alias ktp="kubectl top pods"
-alias ktno="kubectl top nodes"
-alias kdebug="kubectl run dibi-debug --rm -i --tty --image nicolaka/netshoot -- /bin/bash"
+# k8s aliases
+command -v kubectl >/dev/null && compdef kubecolor=kubectl
+command -v kubectl >/dev/null && alias kubectl=kubecolor
+command -v kubectl >/dev/null && alias ktp="kubectl top pods"
+command -v kubectl >/dev/null && alias ktno="kubectl top nodes"
+command -v kubectl >/dev/null && alias kdebug="kubectl run dibi-debug --rm -i --tty --image nicolaka/netshoot -- /bin/bash"
 
 # Completion suggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
@@ -195,14 +198,14 @@ autoload -U +X bashcompinit && bashcompinit
 command -v flux >/dev/null && . <(flux completion zsh)
 
 ## Azure CLI Completion
-if ! type "/opt/homebrew/etc/bash_completion.d/az" > /dev/null; then
+if type "/opt/homebrew/etc/bash_completion.d/az" > /dev/null; then
   source /opt/homebrew/etc/bash_completion.d/az
 fi
 
 ## 1password cli completion
 command -v op >/dev/null && . <(op completion zsh)
 
-if ! type "$HOME/.docker/init-zsh.sh" > /dev/null; then
+if type "$HOME/.docker/init-zsh.sh" > /dev/null; then
   source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
 fi
 
