@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [core]
   excludesfile = "~/.gitignore"
-{{- if (and (hasKey . "name") (hasKey . "email") (hasKey . "signingKey")) }}
+{{- if (and (hasKey . "name") (hasKey . "email") (hasKey . "signingkey")) }}
 [user]
   name = {{ .name | quote }}
   email = {{ .email | quote }}
