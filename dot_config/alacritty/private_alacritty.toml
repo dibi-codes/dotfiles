@@ -33,11 +33,23 @@ padding.x = 0
 padding.y = 0
 
 [font]
-normal = { family = "Fira Code Nerd Font", style = "Retina" }
-bold = { family = "Fira Code Nerd Font", style = "Bold" }
-italic = { family = "Fira Code Nerd Font", style = "Italic" }
-bold_italic = { family = "Fira Code Nerd Font", style = "Bold Italic" }
-size = 11.25
+size = 11.5
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
 
 [[keyboard.bindings]]
 chars = "\u001BF"
