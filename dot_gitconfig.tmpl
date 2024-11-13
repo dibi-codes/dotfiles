@@ -1,14 +1,16 @@
 # This is Git's per-user configuration file.
 [core]
-        excludesfile = "~/.gitignore"
+  excludesfile = "~/.gitignore"
+{{- if (and (ne .name "") (ne .email "") (ne .signingkey "")) }}
 [user]
-        name = {{ .name | quote }}
-        email = {{ .email | quote }}
-        signingkey = {{ .signingkey | quote }}
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+  signingkey = {{ .signingkey | quote }}
+{{- end }}
 [commit]
-        gpgsign = true
+  gpgsign = true
 [pull]
-        rebase = true
+  rebase = true
 [gpg]
 	program = gpg2
 [diff]
