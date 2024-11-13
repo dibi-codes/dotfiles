@@ -160,6 +160,10 @@ yay() {
 }
 {{- end }}
 
+{{- if eq .chezmoi.os "linux" }}
+alias open="xdg-open"
+{{- end }}
+
 # kubePS1 config
 get_kubecluster_color() {
     if [[ $KUBE_PS1_CONTEXT == *"prod"* ]]; then
