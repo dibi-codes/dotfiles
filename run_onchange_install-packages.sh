@@ -16,5 +16,6 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${
 
 # Install oh-my-tmux
 git clone --depth=1 https://github.com/gpakosz/.tmux.git "${HOME}/.tmux" || echo "oh-my-tmux might already be installed"
+ln -s -f "$HOME/.tmux/.tmux.conf" "$HOME"
 
 chsh -s /bin/zsh
