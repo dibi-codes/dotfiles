@@ -165,5 +165,6 @@ packages:
       - alacritty
       - curl
       - git
+      - tmux
       - vim
       - zsh

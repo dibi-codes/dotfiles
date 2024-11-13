@@ -98,7 +98,8 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   openstack
-  azurerepos fino-vault)
+  azurerepos
+  fino-vault)
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
@@ -188,24 +189,30 @@ bindkey '^ ' autosuggest-accept
 zstyle ':completion:*' special-dirs true
 fpath=($fpath ~/.zsh/completion)
 
+autoload -U +X bashcompinit && bashcompinit
+
 ## flux autocompletion
 command -v flux >/dev/null && . <(flux completion zsh)
 
 ## Azure CLI Completion
-autoload -U +X bashcompinit && bashcompinit
-source /opt/homebrew/etc/bash_completion.d/az
+if ! type "/opt/homebrew/etc/bash_completion.d/az" > /dev/null; then
+  source /opt/homebrew/etc/bash_completion.d/az
+fi
 
 ## 1password cli completion
-eval "$(op completion zsh)"; compdef _op op
+command -v op >/dev/null && . <(op completion zsh)
+
+if ! type "$HOME/.docker/init-zsh.sh" > /dev/null; then
+  source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
+fi
+
+command -v talosctl >/dev/null && . <(talosctl completion zsh)
 
 alias watch="watch "
 
 # for history search
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
-
-source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
-source <(talosctl completion zsh) || true # Talos completions
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
