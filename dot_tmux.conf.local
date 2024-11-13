@@ -424,6 +424,10 @@ set -g @continuum-restore 'on'
 set -g @continuum-boot 'on'
 set -g @continuum-boot-options 'alacritty'
 
+set -g @plugin 'charlietag/tmux-split-statusbar'
+set -g @split-statusbar-mode 'on'
+set -g @split-statusbar-swap-lines 'off'
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
