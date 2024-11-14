@@ -138,7 +138,6 @@ packages:
       - "mysqlworkbench"
       - "netiquette"
       - "nosqlbooster-for-mongodb"
-      - "orion"
       - "powershell"
       - "proxyman"
       - "raycast"
