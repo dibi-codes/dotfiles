@@ -2,6 +2,8 @@
 
 set -eu
 
+DESIRED_SHELL=/bin/zsh
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --unattended || echo "oh-my-zsh might already be installed"
 
@@ -18,4 +20,7 @@ git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "${
 git clone --depth=1 https://github.com/gpakosz/.tmux.git "${HOME}/.tmux" || echo "oh-my-tmux might already be installed"
 ln -s -f "$HOME/.tmux/.tmux.conf" "$HOME"
 
-chsh -s /bin/zsh
+if [[ ! "$SHELL" == "$DESIRED_SHELL" ]]; then
+  echo "Trying to set user shell..."
+  chsh -s /bin/zsh
+fi

@@ -1,4 +1,9 @@
 {{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
 .config/yabai
 .config/skhd
+{{- end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
 {{- end }}
