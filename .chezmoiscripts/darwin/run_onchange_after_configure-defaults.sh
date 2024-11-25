@@ -12,7 +12,7 @@ defaults write com.apple.dock "static-only" -bool true # Only show opened apps i
 defaults write com.apple.dock "expose-group-apps" -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false # Disable window animations
 defaults write NSGlobalDomain KeyRepeat -int 1 # was 2
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
