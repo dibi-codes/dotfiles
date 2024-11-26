@@ -16,8 +16,8 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
-defaults write NSGlobalDomain AppleHighlightColor -string "0.65098 0.85490 0.58431"
-defaults write NSGlobalDomain AppleAccentColor -int 1
+#defaults write NSGlobalDomain AppleHighlightColor -string "0.65098 0.85490 0.58431"
+#defaults write NSGlobalDomain AppleAccentColor -int 1
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool false
 defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5 # Mouse speed
