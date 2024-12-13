@@ -160,6 +160,10 @@ yay() {
 }
 {{- end }}
 
+{{- if eq .chezmoi.os "darwin" }}
+alias nerdctl="nerdctl.lima"
+{{- end}}
+
 {{- if eq .chezmoi.os "linux" }}
 alias open="xdg-open"
 {{- end }}
