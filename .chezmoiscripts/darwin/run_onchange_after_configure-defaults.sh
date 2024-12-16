@@ -20,8 +20,8 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool true
 #defaults write NSGlobalDomain AppleAccentColor -int 1
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool false
-defaults write NSGlobalDomain com.apple.mouse.scaling -float 0.7 # Mouse speed
-defaults write NSGlobalDomain com.apple.mouse.linear -bool true
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5 # Mouse speed
+defaults write NSGlobalDomain com.apple.mouse.linear -bool false
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 # defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture disable-shadow -bool true
