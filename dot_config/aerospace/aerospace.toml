@@ -1,0 +1,171 @@
+start-at-login = true
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+non-empty-workspaces-root-containers-layout-on-startup = 'smart'
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+
+#on-focused-monitor-changed = ['move-mouse window-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
+
+# Run Sketchybar together with AeroSpace
+# sketchbar has a built-in detection of already running process,
+# so it won't be run twice on AeroSpace restart
+after-startup-command = [
+  'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+]
+
+# Notify Sketchybar about workspace change
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.left = 12
+outer.bottom = 12
+outer.right = 12
+outer.top = [{ monitor.built-in = 10 }, 46]
+
+[workspace-to-monitor-force-assignment]
+1 = ['main', 'HP']
+2 = ['main', 'HP']
+3 = ['main', 'HP']
+4 = ['main', 'HP']
+5 = ['main', 'HP']
+6 = ['built-in', 'main']
+7 = ['built-in', 'main']
+8 = ['built-in', 'main']
+9 = ['built-in', 'main']
+10 = ['EA244WMi', 'main']
+
+[mode.main.binding]
+cmd-h = []                                          # Disable "hide application"
+cmd-alt-h = []                                      # Disable "hide others"
+ctrl-alt-space = 'layout tiles horizontal vertical'
+ctrl-alt-t = 'layout floating tiling'
+ctrl-alt-m = 'fullscreen'
+ctrl-alt-e = 'balance-sizes'
+
+# Resizing
+ctrl-alt-h = 'resize width -50'
+ctrl-alt-j = 'resize height +50'
+ctrl-alt-k = 'resize height -50'
+ctrl-alt-l = 'resize width +50'
+
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+ctrl-alt-1 = 'move-node-to-workspace 1'
+ctrl-alt-2 = 'move-node-to-workspace 2'
+ctrl-alt-3 = 'move-node-to-workspace 3'
+ctrl-alt-4 = 'move-node-to-workspace 4'
+ctrl-alt-5 = 'move-node-to-workspace 5'
+ctrl-alt-6 = 'move-node-to-workspace 6'
+ctrl-alt-7 = 'move-node-to-workspace 7'
+ctrl-alt-8 = 'move-node-to-workspace 8'
+ctrl-alt-9 = 'move-node-to-workspace 9'
+ctrl-alt-0 = 'move-node-to-workspace 10'
+
+# Move window within space
+ctrl-alt-left = ['move left']
+ctrl-alt-down = ['move down']
+ctrl-alt-up = ['move up']
+ctrl-alt-right = ['move right']
+
+# Move window to monitor
+ctrl-alt-cmd-up = ['move-node-to-monitor up --focus-follows-window']
+ctrl-alt-cmd-down = ['move-node-to-monitor down --focus-follows-window']
+ctrl-alt-cmd-right = ['move-node-to-monitor right --focus-follows-window']
+ctrl-alt-cmd-left = ['move-node-to-monitor left --focus-follows-window']
+
+# Focus next/prev
+ctrl-alt-tab = ['focus-back-and-forth']
+
+alt-cmd-right = ['move-workspace-to-monitor next']
+alt-cmd-left = ['move-workspace-to-monitor prev']
+
+[mode.service.binding]
+r = ['flatten-workspace-tree', 'mode main'] # reset layout
+#s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
+backspace = ['close-all-windows-but-current', 'mode main']
+esc = 'mode main'
+###
+
+# Windows that should float
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apple.AppStore'
+run = 'layout floating'
+
+
+## move to workspace 6
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace 6']
+[[on-window-detected]]
+if.app-id = 'dev.vencord.vesktop'
+run = ['move-node-to-workspace 6']
+
+## move to workspace 7
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['move-node-to-workspace 7']
+[[on-window-detected]]
+if.app-id = 'org.whispersystems.signal-desktop'
+run = ['move-node-to-workspace 7']
+
+## move to workspace 8
+[[on-window-detected]]
+if.app-id = 'com.apple.Music'
+run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'com.apple.podcasts'
+run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['move-node-to-workspace 8']
+
+## move code to main display
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.VSCode'
+# run = ['move-node-to-monitor main --focus-follows-window']
+
+# [[on-window-detected]]
+# if.app-id = 'com.apple.Safari'
+# run = ['move-node-to-workspace 2']
+# [[on-window-detected]]
+# if.app-id = 'com.brave.Browser'
+# run = ['move-node-to-workspace 1']
+
+##move to code workspace
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = ['move-node-to-workspace 10']
