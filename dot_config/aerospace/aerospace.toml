@@ -20,11 +20,9 @@ after-startup-command = [
 ]
 
 # Notify Sketchybar about workspace change
-# exec-on-workspace-change = [
-#   '/bin/bash',
-#   '-c',
-#   '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-# ]
+exec-on-workspace-change = ['/bin/bash', '-c',
+  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
 
 [gaps]
 inner.horizontal = 10
@@ -119,6 +117,10 @@ run = 'layout floating'
 if.app-id = 'com.apple.AppStore'
 run = 'layout floating'
 
+## move to workspace 5
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = ['move-node-to-workspace 5']
 
 ## move to workspace 6
 [[on-window-detected]]
