@@ -20,11 +20,11 @@ after-startup-command = [
 ]
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-]
+# exec-on-workspace-change = [
+#   '/bin/bash',
+#   '-c',
+#   '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+# ]
 
 [gaps]
 inner.horizontal = 10
@@ -44,7 +44,7 @@ outer.top = [{ monitor.built-in = 10 }, 46]
 7 = ['built-in', 'main']
 8 = ['built-in', 'main']
 9 = ['built-in', 'main']
-10 = ['EA244WMi', 'main']
+10 = ['EA244WMi', 'Samsung', 'main']
 
 [mode.main.binding]
 cmd-h = []                                          # Disable "hide application"
