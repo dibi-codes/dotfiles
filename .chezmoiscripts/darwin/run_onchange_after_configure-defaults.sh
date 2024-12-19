@@ -5,7 +5,7 @@
 echo "Setup macOS defaults..."
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1 # enable airdrop over wired ethernet
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.spaces spans-displays -bool false
+defaults write com.apple.spaces spans-displays -bool true
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock "mru-spaces" -bool false # Do NOT reorder Spaces based on most recent use
 defaults write com.apple.dock "static-only" -bool true # Only show opened apps in Dock.
