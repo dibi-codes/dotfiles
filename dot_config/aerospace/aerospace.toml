@@ -20,7 +20,9 @@ after-startup-command = [
 ]
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
   '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
@@ -48,14 +50,15 @@ outer.top = [{ monitor.built-in = 10 }, 46]
 cmd-h = []                                          # Disable "hide application"
 cmd-alt-h = []                                      # Disable "hide others"
 ctrl-alt-space = 'layout tiles horizontal vertical'
-ctrl-alt-t = 'layout floating tiling'
+ctrl-alt-f = 'layout floating tiling'
+ctrl-alt-a = 'layout accordion tiles'
 ctrl-alt-m = 'fullscreen'
 ctrl-alt-e = 'balance-sizes'
 
 # Resizing
 ctrl-alt-h = 'resize width -50'
-ctrl-alt-j = 'resize height +50'
-ctrl-alt-k = 'resize height -50'
+ctrl-alt-j = 'resize height -50'
+ctrl-alt-k = 'resize height +50'
 ctrl-alt-l = 'resize width +50'
 
 ctrl-1 = 'workspace 1'
