@@ -35,16 +35,16 @@ outer.right = 12
 outer.top = [{ monitor.built-in = 10 }, 46]
 
 [workspace-to-monitor-force-assignment]
-1 = ['main', 'HP']
-2 = ['main', 'HP']
-3 = ['main', 'HP']
-4 = ['main', 'HP']
-5 = ['main', 'HP']
+1 = ['main', 'HP Z27', 'U27P2G6B']
+2 = ['main', 'HP Z27', 'U27P2G6B']
+3 = ['main', 'HP Z27', 'U27P2G6B']
+4 = ['main', 'HP Z27', 'U27P2G6B']
+5 = ['main', 'HP Z27', 'U27P2G6B']
 6 = ['built-in', 'main']
 7 = ['built-in', 'main']
 8 = ['built-in', 'main']
 9 = ['built-in', 'main']
-10 = ['EA244WMi', 'Samsung', 'main']
+10 = ['EA244WMi', 'LF24T450F', 'main']
 
 [mode.main.binding]
 cmd-h = []                                          # Disable "hide application"
