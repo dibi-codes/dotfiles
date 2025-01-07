@@ -1,5 +1,25 @@
 packages:
   darwin:
+    taps:
+      - "1password/tap"
+      - "azhuchkov/tools"
+      - "azure/kubelogin"
+      - "cmacrae/formulae"
+      - "danielgtaylor/restish"
+      - "derailed/popeye"
+      - "felixkratz/formulae"
+      - "fluxcd/tap"
+      - "go-swagger/go-swagger"
+      - "hashicorp/tap"
+      - "homebrew/bundle"
+      - "homebrew/services"
+      - "jandedobbeleer/oh-my-posh"
+      - "johanhaleby/kubetail"
+      - "k0sproject/tap"
+      - "koekeishiya/formulae"
+      - "metalbear-co/mirrord"
+      - "nikitabobko/tap"
+      - "siderolabs/tap"
     brews:
       - "arping"
       - "awscli"
