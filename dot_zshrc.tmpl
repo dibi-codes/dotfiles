@@ -147,6 +147,15 @@ export EDITOR="vim"
 alias docker='nerdctl
 alias wget='curl -O'
 alias fastcommit='git commit . -m "$(curl -s https://whatthecommit.com/index.txt)"'
+
+{{- if eq .chezmoi.os "darwin" }}
+alias nerdctl="nerdctl.lima"
+{{- end}}
+
+{{- if eq .chezmoi.os "linux" }}
+alias open="xdg-open"
+{{- end }}
+
 command -v pwgen >/dev/null && alias pwgencp='echo -n "$(pwgen -scn 32 1)" | pbcopy'
 command -v gls >/dev/null && alias ls="gls --color=always"
 
@@ -159,14 +168,6 @@ yay() {
     brew $@
   fi
 }
-{{- end }}
-
-{{- if eq .chezmoi.os "darwin" }}
-alias nerdctl="nerdctl.lima"
-{{- end}}
-
-{{- if eq .chezmoi.os "linux" }}
-alias open="xdg-open"
 {{- end }}
 
 # kubePS1 config
