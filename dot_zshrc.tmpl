@@ -147,6 +147,7 @@ export EDITOR="vim"
 alias docker='nerdctl'
 alias wget='curl -O'
 alias fastcommit='git commit . -m "$(curl -s https://whatthecommit.com/index.txt)"'
+alias watch="watch "
 
 {{- if eq .chezmoi.os "darwin" }}
 alias nerdctl="nerdctl.lima"
@@ -215,13 +216,7 @@ fi
 ## 1password cli completion
 command -v op >/dev/null && . <(op completion zsh)
 
-if type "$HOME/.docker/init-zsh.sh" > /dev/null; then
-  source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
-fi
-
 command -v talosctl >/dev/null && . <(talosctl completion zsh)
-
-alias watch="watch "
 
 # for history search
 bindkey '^[[A' up-line-or-search
@@ -229,4 +224,3 @@ bindkey '^[[B' down-line-or-search
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
