@@ -15,6 +15,25 @@ local function getIconForApp(appName)
     return app_icons[appName] or app_icons["default"]
 end
 
+local function getMonitors()
+  local handle = io.popen(LIST_MONITORS)
+  -- reads command output.
+  local output = handle:read('*a')
+  handle:close()
+  -- replaces any newline with a space
+  return output:gmatch("[^\r\n]+")
+end
+
+local function numberOfMonitors()
+  local monitors = getMonitors()
+
+  local count = 0
+  for _ in monitors do
+      count = count + 1
+  end
+  return count
+end
+
 local function updateSpaceIcons(spaceId, workspaceName)
     local icon_strip = ""
     local shouldDraw = false
@@ -50,10 +69,12 @@ end
 local function addWorkspaceItem(workspaceName, monitorId, isSelected)
     local spaceId = "workspace_" .. workspaceName
 
-    if monitorId == "1" then -- TODO: Calc id for single and two screen setup
-      monitorId = "2"
-    elseif monitorId == "2" then
-      monitorId = "1"
+    if numberOfMonitors() >= 3 then
+      if monitorId == "1" then
+        monitorId = "2"
+      elseif monitorId == "2" then
+        monitorId = "1"
+      end
     end
 
     if not spaces[spaceId] then
@@ -122,15 +143,6 @@ local function addWorkspaceItem(workspaceName, monitorId, isSelected)
     })
 
     updateSpaceIcons(spaceId, workspaceName)
-end
-
-local function getMonitors()
-  local handle = io.popen(LIST_MONITORS)
-  -- reads command output.
-  local output = handle:read('*a')
-  handle:close()
-  -- replaces any newline with a space
-  return output:gmatch("[^\r\n]+")
 end
 
 local function listWorkspacesForMonitor(monitorId, callback)
