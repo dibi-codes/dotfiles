@@ -11,3 +11,7 @@ brew {{ . | quote }}
 cask {{ . | quote }}
 {{ end -}}
 EOF
+
+{{ range .packages.darwin.mas -}}
+mas install {{ . | quote }}
+{{ end -}}

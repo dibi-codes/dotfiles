@@ -168,6 +168,9 @@ packages:
       - "vlc"
       - "wireshark"
       - "yubico-authenticator"
+    mas:
+      - "wireguard"
+      # - "xcode"
   linux:
     arch:
       - alacritty
