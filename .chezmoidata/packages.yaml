@@ -169,8 +169,8 @@ packages:
       - "wireshark"
       - "yubico-authenticator"
     mas:
-      - "wireguard"
-      # - "xcode"
+      - 1451685025 # wireguard
+      # - 497799835 # xcode
   linux:
     arch:
       - alacritty
