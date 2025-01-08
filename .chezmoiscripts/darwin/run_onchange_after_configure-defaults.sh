@@ -46,5 +46,12 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Make all buttons tabable
+
+# Disable macos "tiling"
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
+defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
 
 killall Dock && killall Finder
