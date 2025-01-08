@@ -162,19 +162,12 @@ packages:
       - "signal"
       - "slack"
       - "spotify"
-      - "steam"
-      - "sweet-home3d"
-      - "teamspeak-client"
-      - "tunnelblick"
       - "utm"
       - "via"
       - "visual-studio-code"
       - "vlc"
       - "wireshark"
       - "yubico-authenticator"
-      - "yubico-yubikey-manager"
-      - "yubico-yubikey-personalization-gui"
-      - "yubico-yubikey-piv-manager"
   linux:
     arch:
       - alacritty
