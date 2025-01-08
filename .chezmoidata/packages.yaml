@@ -149,7 +149,7 @@ packages:
       - "microsoft-powerpoint"
       - "microsoft-teams"
       - "microsoft-word"
-      - "mqtt-explorer"
+      # - "mqtt-explorer"
       - "mysqlworkbench"
       - "netiquette"
       - "nosqlbooster-for-mongodb"
