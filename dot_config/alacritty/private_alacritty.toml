@@ -64,5 +64,5 @@ mods = "Alt"
 [terminal]
 
 [terminal.shell]
-args = ["-l", "-c", "tmux"]
+args = ["-l", "-c", "/opt/homebrew/bin/tmux"] # TODO Workaround for Linux
 program = "/bin/zsh"
