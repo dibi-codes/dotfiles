@@ -6,11 +6,13 @@ local app_icons = require("helpers.app_icons")
 local LIST_ALL = "aerospace list-workspaces --all"
 local LIST_CURRENT = "aerospace list-workspaces --focused"
 local LIST_MONITORS = "aerospace list-monitors | awk '{print $1}'"
+local NO_MONITORS = "aerospace list-monitors --count"
 local LIST_WORKSPACES = "aerospace list-workspaces --monitor %s"
 local LIST_APPS = "aerospace list-windows --workspace %s | awk -F'|' '{gsub(/^ *| *$/, \"\", $2); print $2}'"
 
 local spaces = {}
 local cachedMonitors = nil
+local numberOfMonitors = 0
 local cachedFocusedWorkspace = nil
 
 -- Fetch monitors and cache result
@@ -25,6 +27,16 @@ local function getMonitors()
         end
     end
     return cachedMonitors
+end
+
+local function getNumberOfMonitors()
+  if numberOfMonitors == 0 then
+    local handle = io.popen(NO_MONITORS)
+    numberOfMonitors = handle:read('*a'):match("[^\r\n]+")
+    handle:close()
+  end
+
+  return tonumber(numberOfMonitors)
 end
 
 -- Fetch current focused workspace and cache result
@@ -74,6 +86,14 @@ end
 -- Add a workspace item to the UI
 local function addWorkspaceItem(workspaceName, monitorId, isSelected)
     local spaceId = "workspace_" .. workspaceName
+
+    if getNumberOfMonitors() >= 3 then
+      if monitorId == "1" then
+        monitorId = "2"
+      elseif monitorId == "2" then
+        monitorId = "1"
+      end
+    end
 
     if not spaces[spaceId] then
         local spaceItem = sbar.add("item", spaceId, {
@@ -183,3 +203,4 @@ local spaceObserver = sbar.add("item", { drawing = false, updates = true })
 spaceObserver:subscribe("front_app_switched", handleFocusChange)
 spaceObserver:subscribe("aerospace_workspace_change", handleFocusChange)
 spaceObserver:subscribe("space_windows_change", handleFocusChange)
+spaceObserver:subscribe("power_source_change", drawSpaces)
