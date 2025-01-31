@@ -2,16 +2,16 @@
 
 brew bundle --no-lock --no-vscode --cleanup --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
-tap {{ . | quote }}
+tap {{ . }}
 {{ end -}}
 {{ range .packages.darwin.brews -}}
-brew {{ . | quote }}
+brew {{ . }}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
-cask {{ . | quote }}
+cask {{ . }}
 {{ end -}}
 EOF
 
 {{ range .packages.darwin.mas -}}
-mas install {{ . | quote }}
+mas install {{ . }}
 {{ end -}}
