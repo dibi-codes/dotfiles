@@ -103,7 +103,6 @@ packages:
       - "sketchybar"
       - "step"
       - "swift"
-      # - "swiftlint"
       - "talosctl"
       - "telnet"
       - "terraform"
