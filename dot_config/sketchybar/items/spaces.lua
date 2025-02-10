@@ -3,12 +3,11 @@ local icons = require("icons")
 local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
-local LIST_ALL = "aerospace list-workspaces --all"
 local LIST_CURRENT = "aerospace list-workspaces --focused"
-local LIST_MONITORS = "aerospace list-monitors | awk '{print $1}'"
+local LIST_MONITORS = "aerospace list-monitors --format '%{monitor-id}'"
 local NO_MONITORS = "aerospace list-monitors --count"
 local LIST_WORKSPACES = "aerospace list-workspaces --monitor %s"
-local LIST_APPS = "aerospace list-windows --workspace %s | awk -F'|' '{gsub(/^ *| *$/, \"\", $2); print $2}'"
+local LIST_APPS = "aerospace list-windows --workspace %s --format '%%{app-name}'"
 
 local spaces = {}
 local cachedMonitors = nil
@@ -203,4 +202,15 @@ local spaceObserver = sbar.add("item", { drawing = false, updates = true })
 spaceObserver:subscribe("front_app_switched", handleFocusChange)
 spaceObserver:subscribe("aerospace_workspace_change", handleFocusChange)
 spaceObserver:subscribe("space_windows_change", handleFocusChange)
-spaceObserver:subscribe("power_source_change", drawSpaces)
+spaceObserver:subscribe("power_source_change", function()
+    spaces = {}
+    cachedMonitors = nil
+    numberOfMonitors = 0
+    cachedFocusedWorkspace = nil
+
+    local sec = tonumber(os.clock() + 5);
+      while (os.clock() < sec) do
+    end
+
+    drawSpaces()
+end)
