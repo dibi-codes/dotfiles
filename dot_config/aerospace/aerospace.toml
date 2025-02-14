@@ -84,22 +84,23 @@ ctrl-alt-9 = 'move-node-to-workspace 9'
 ctrl-alt-0 = 'move-node-to-workspace 10'
 
 # Move window within space
-ctrl-alt-left = ['move left']
-ctrl-alt-down = ['move down']
-ctrl-alt-up = ['move up']
-ctrl-alt-right = ['move right']
+ctrl-alt-left = 'move left'
+ctrl-alt-down = 'move down'
+ctrl-alt-up = 'move up'
+ctrl-alt-right = 'move right'
 
 # Move window to monitor
-ctrl-alt-cmd-up = ['move-node-to-monitor up --focus-follows-window']
-ctrl-alt-cmd-down = ['move-node-to-monitor down --focus-follows-window']
-ctrl-alt-cmd-right = ['move-node-to-monitor right --focus-follows-window']
-ctrl-alt-cmd-left = ['move-node-to-monitor left --focus-follows-window']
+ctrl-alt-cmd-up = 'move-node-to-monitor up --focus-follows-window'
+ctrl-alt-cmd-down = 'move-node-to-monitor down --focus-follows-window'
+ctrl-alt-cmd-right = 'move-node-to-monitor right --focus-follows-window'
+ctrl-alt-cmd-left = 'move-node-to-monitor left --focus-follows-window'
 
 # Focus next/prev
-ctrl-alt-tab = ['focus-back-and-forth']
-
-alt-cmd-right = ['move-workspace-to-monitor next']
-alt-cmd-left = ['move-workspace-to-monitor prev']
+ctrl-alt-tab = 'focus-back-and-forth'
+alt-cmd-left = 'focus left'
+alt-cmd-down = 'focus down'
+alt-cmd-up = 'focus up'
+alt-cmd-right = 'focus right'
 
 [mode.service.binding]
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -113,6 +114,9 @@ esc = 'mode main'
 ###
 
 # Windows that should float
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = ['layout floating']
 [[on-window-detected]]
 if.app-id = 'com.apple.systempreferences'
 run = 'layout floating'
