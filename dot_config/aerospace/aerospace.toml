@@ -39,7 +39,7 @@ outer.top = [{ monitor.built-in = 10 }, 46]
 2 = ['main', 'HP Z27', 'U27P2G6B']
 3 = ['main', 'HP Z27', 'U27P2G6B']
 4 = ['main', 'HP Z27', 'U27P2G6B']
-5 = ['main', 'HP Z27', 'U27P2G6B']
+5 = ['built-in', 'main']
 6 = ['built-in', 'main']
 7 = ['built-in', 'main']
 8 = ['built-in', 'main']
@@ -60,6 +60,7 @@ ctrl-alt-h = 'resize width -50'
 ctrl-alt-j = 'resize height -50'
 ctrl-alt-k = 'resize height +50'
 ctrl-alt-l = 'resize width +50'
+
 
 ctrl-1 = 'workspace 1'
 ctrl-2 = 'workspace 2'
@@ -83,6 +84,9 @@ ctrl-alt-8 = 'move-node-to-workspace 8'
 ctrl-alt-9 = 'move-node-to-workspace 9'
 ctrl-alt-0 = 'move-node-to-workspace 10'
 
+ctrl-left = 'workspace prev'
+ctrl-right = 'workspace next'
+
 # Move window within space
 ctrl-alt-left = 'move left'
 ctrl-alt-down = 'move down'
@@ -97,10 +101,10 @@ ctrl-alt-cmd-left = 'move-node-to-monitor left --focus-follows-window'
 
 # Focus next/prev
 ctrl-alt-tab = 'focus-back-and-forth'
-alt-cmd-left = 'focus left'
-alt-cmd-down = 'focus down'
-alt-cmd-up = 'focus up'
-alt-cmd-right = 'focus right'
+ctrl-cmd-left = 'focus left'
+ctrl-cmd-down = 'focus down'
+ctrl-cmd-up = 'focus up'
+ctrl-cmd-right = 'focus right'
 
 [mode.service.binding]
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -125,6 +129,10 @@ if.app-id = 'com.apple.AppStore'
 run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.objective-see.lulu.app'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'ch.sudo.cyberduck'
+if.window-title-regex-substring = "Transfers"
 run = 'layout floating'
 
 ## move to workspace 5
@@ -166,8 +174,9 @@ if.app-id = 'com.spotify.client'
 run = ['move-node-to-workspace 8']
 
 ## move code to main display
-# [[on-window-detected]]
-# if.app-id = 'com.microsoft.VSCode'
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace 1 --focus-follows-window']
 # run = ['move-node-to-monitor main --focus-follows-window']
 
 # [[on-window-detected]]
