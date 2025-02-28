@@ -99,7 +99,7 @@ plugins=(
   zsh-syntax-highlighting
   openstack
   azurerepos
-  fino-vault)
+  kycnow-vault)
 
 {{- if eq .chezmoi.os "darwin" }}
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -151,6 +151,7 @@ alias watch="watch "
 
 {{- if eq .chezmoi.os "darwin" }}
 alias nerdctl="nerdctl.lima"
+compdef _nerdctl "nerdctl.lima"
 {{- end}}
 
 {{- if eq .chezmoi.os "linux" }}
