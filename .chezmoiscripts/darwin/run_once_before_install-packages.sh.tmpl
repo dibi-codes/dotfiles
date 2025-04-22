@@ -5,7 +5,11 @@ brew bundle --no-vscode --cleanup --file=/dev/stdin <<EOF
 tap '{{ . }}'
 {{ end -}}
 {{ range .packages.darwin.brews -}}
-brew '{{ . }}'
+{{- if (kindIs "string" .) -}}
+brew '{{.}}'
+{{- else -}}
+brew '{{.name}}'{{if .args}}, args: '{{.args}}'{{end}}
+{{- end}}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
 cask '{{ . }}'

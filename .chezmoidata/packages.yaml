@@ -106,7 +106,8 @@ packages:
       - 'talosctl'
       - 'telnet'
       - 'terraform'
-      - 'tmux, args: ["HEAD"]'
+      - name: 'tmux'
+        args: ["HEAD"]
       - 'tree'
       - 'trivy'
       - 'unar'
