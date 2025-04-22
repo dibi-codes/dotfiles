@@ -1,6 +1,6 @@
 #!/bin/bash
 
-brew bundle --no-lock --no-vscode --cleanup --file=/dev/stdin <<EOF
+brew bundle --no-vscode --cleanup --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
 tap {{ . }}
 {{ end -}}
@@ -15,3 +15,5 @@ EOF
 {{ range .packages.darwin.mas -}}
 mas install {{ . }}
 {{ end -}}
+
+{{ exit 0 }}
