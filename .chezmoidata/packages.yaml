@@ -107,7 +107,7 @@ packages:
       - 'telnet'
       - 'terraform'
       - name: 'tmux'
-        args: ["HEAD"]
+        args: '["HEAD"]'
       - 'tree'
       - 'trivy'
       - 'unar'

@@ -8,7 +8,7 @@ tap '{{ . }}'
 {{- if (kindIs "string" .) -}}
 brew '{{.}}'
 {{- else -}}
-brew '{{.name}}'{{if .args}}, args: '{{.args}}'{{end}}
+brew '{{.name}}'{{if .args}}, args: {{.args}}{{end}}
 {{- end}}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
