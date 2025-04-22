@@ -60,7 +60,6 @@ packages:
       - "k0sctl"
       - "k9s"
       - "krew"
-      - "kubectl"
       - "kubebuilder"
       - "kubecolor"
       - "kubeconform"
