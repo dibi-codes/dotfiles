@@ -13,7 +13,5 @@ cask {{ . }}
 EOF
 
 {{ range .packages.darwin.mas -}}
-mas install {{ . }}
+mas install {{ . }} || true
 {{ end -}}
-
-{{ exit 0 }}
