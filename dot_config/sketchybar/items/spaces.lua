@@ -4,6 +4,7 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local LIST_CURRENT = "aerospace list-workspaces --focused"
+local LIST_VISIBLE = "aerospace list-workspaces --monitor %s --visible"
 local LIST_MONITORS = "aerospace list-monitors --format '%{monitor-id}'"
 local NO_MONITORS = "aerospace list-monitors --count"
 local LIST_WORKSPACES = "aerospace list-workspaces --monitor %s"
@@ -46,6 +47,13 @@ local function getFocusedWorkspace(force)
         handle:close()
     end
     return cachedFocusedWorkspace
+end
+
+local function getVisibleWorkspace(monitorId)
+    local handle = io.popen(LIST_VISIBLE:format(monitorId))
+    visibleWorkspace = handle:read('*a'):match("[^\r\n]+")
+    handle:close()
+    return visibleWorkspace
 end
 
 -- Get icon for an app with default fallback
@@ -146,6 +154,7 @@ local function drawSpaces()
 
     for _, monitorId in ipairs(monitors) do
         sbar.exec(LIST_WORKSPACES:format(monitorId), function(workspacesOutput)
+            -- local visibleWorkspace = getVisibleWorkspace(monitorId)
             for workspaceName in workspacesOutput:gmatch("[^\r\n]+") do
                 local isSelected = workspaceName == focusedWorkspace
                 addWorkspaceItem(workspaceName, monitorId, isSelected)
