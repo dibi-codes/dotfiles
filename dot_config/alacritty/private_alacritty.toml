@@ -64,5 +64,5 @@ mods = "Alt"
 [terminal]
 
 [terminal.shell]
-args = ["-l", "-c", "[ '$(uname -m)' = 'x86_64' ] && exec /usr/local/bin/tmux || exec /opt/homebrew/bin/tmux"]
+args = ["-l", "-c", "[ \"$(uname -m)\" = \"x86_64\" ] && exec /usr/local/bin/tmux || exec /opt/homebrew/bin/tmux"]
 program = "/bin/zsh"
