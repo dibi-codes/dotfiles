@@ -105,7 +105,7 @@ packages:
       - 'swift'
       - 'talosctl'
       - 'telnet'
-      - 'terraform'
+      - 'tfenv'
       - name: 'tmux'
         args: '["HEAD"]'
       - 'tree'
