@@ -45,7 +45,7 @@ outer.top = [{ monitor.built-in = 10 }, 46]
 7 = ['built-in', 'main']
 8 = ['built-in', 'main']
 9 = ['built-in', 'main']
-10 = ['EA244WMi', 'LF24T450F', 'main']
+T = ['EA244WMi', 'LF24T450F', 'main']
 
 [mode.main.binding]
 cmd-h = []                                          # Disable "hide application"
@@ -72,7 +72,7 @@ ctrl-6 = 'workspace 6'
 ctrl-7 = 'workspace 7'
 ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
-ctrl-0 = 'workspace 10'
+ctrl-t = 'workspace T'
 
 ctrl-alt-1 = 'move-node-to-workspace 1'
 ctrl-alt-2 = 'move-node-to-workspace 2'
@@ -83,7 +83,7 @@ ctrl-alt-6 = 'move-node-to-workspace 6'
 ctrl-alt-7 = 'move-node-to-workspace 7'
 ctrl-alt-8 = 'move-node-to-workspace 8'
 ctrl-alt-9 = 'move-node-to-workspace 9'
-ctrl-alt-0 = 'move-node-to-workspace 10'
+ctrl-alt-t = 'move-node-to-workspace T'
 
 ctrl-left = 'workspace prev'
 ctrl-right = 'workspace next'
@@ -190,4 +190,4 @@ run = ['move-node-to-workspace 1 --focus-follows-window']
 ##move to code workspace
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
-run = ['move-node-to-workspace 10']
+run = ['move-node-to-workspace T']
