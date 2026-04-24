@@ -145,7 +145,6 @@ packages:
       - 'google-cloud-sdk'
       - 'gpg-suite@nightly'
       - 'keepassxc'
-      - 'lulu'
       - 'microsoft-excel'
       - 'microsoft-powerpoint'
       - 'microsoft-teams'

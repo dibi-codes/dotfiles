@@ -15,17 +15,17 @@ on-focus-changed = ['move-mouse window-lazy-center']
 # sketchbar has a built-in detection of already running process,
 # so it won't be run twice on AeroSpace restart
 after-startup-command = [
-  'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
-  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
+#  'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar',
+  'exec-and-forget borders active_color=0xff62bbcc inactive_color=0xff494d64 width=5.0',
 #  'exec-and-forget ~/.config/aerospace/bsp_tiling.sh'
 ]
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-]
+#exec-on-workspace-change = [
+#  '/bin/bash',
+#  '-c',
+#  '/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+#]
 
 [gaps]
 inner.horizontal = 10
@@ -33,19 +33,19 @@ inner.vertical = 10
 outer.left = 12
 outer.bottom = 12
 outer.right = 12
-outer.top = [{ monitor.built-in = 10 }, 46]
+outer.top = [{ monitor.built-in = 8 }, 8]
 
 [workspace-to-monitor-force-assignment]
-1 = ['main', 'HP Z27', 'U27P2G6B']
-2 = ['main', 'HP Z27', 'U27P2G6B']
-3 = ['main', 'HP Z27', 'U27P2G6B']
-4 = ['main', 'HP Z27', 'U27P2G6B']
+1 = ['main', 'HP Z27', 'U27P2G6B', 'P3426WEV']
+2 = ['main', 'HP Z27', 'U27P2G6B', 'P3426WEV']
+3 = ['main', 'HP Z27', 'U27P2G6B', 'P3426WEV']
+4 = ['main', 'HP Z27', 'U27P2G6B', 'P3426WEV']
 5 = ['built-in', 'main']
 6 = ['built-in', 'main']
 7 = ['built-in', 'main']
 8 = ['built-in', 'main']
 9 = ['built-in', 'main']
-T = ['EA244WMi', 'LF24T450F', 'main']
+T = ['EA244WMi', 'LF24T450F', 'built-in']
 
 [mode.main.binding]
 cmd-h = []                                          # Disable "hide application"
@@ -93,6 +93,12 @@ ctrl-alt-left = 'move left'
 ctrl-alt-down = 'move down'
 ctrl-alt-up = 'move up'
 ctrl-alt-right = 'move right'
+
+alt-shift-h = ['join-with left']
+alt-shift-j = ['join-with down']
+alt-shift-k = ['join-with up']
+alt-shift-l = ['join-with right']
+
 
 # Move window to monitor
 ctrl-alt-cmd-up = 'move-node-to-monitor up --focus-follows-window'
@@ -173,11 +179,20 @@ run = ['move-node-to-workspace 8']
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = ['move-node-to-workspace 8']
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace 9']
+
+[[on-window-detected]]
+if.app-id="com.mitchellh.ghostty"
+run= [
+  "layout floating",
+]
 
 ## move code to main display
-[[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = ['move-node-to-workspace 1 --focus-follows-window']
+#[[on-window-detected]]
+#if.app-id = 'com.microsoft.VSCode'
+#run = ['move-node-to-workspace 1 --focus-follows-window']
 # run = ['move-node-to-monitor main --focus-follows-window']
 
 # [[on-window-detected]]
@@ -188,6 +203,6 @@ run = ['move-node-to-workspace 1 --focus-follows-window']
 # run = ['move-node-to-workspace 1']
 
 ##move to code workspace
-[[on-window-detected]]
-if.app-id = 'org.alacritty'
-run = ['move-node-to-workspace T']
+#[[on-window-detected]]
+#if.app-id = 'net.kovidgoyal.kitty'
+#run = ['move-node-to-workspace T']
