@@ -4,11 +4,11 @@ brew bundle --no-vscode --cleanup --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
 tap '{{ . }}'
 {{ end -}}
-{{ range .packages.darwin.brews -}}
+{{ range .packages.darwin.formulae -}}
 {{- if (kindIs "string" .) -}}
-brew '{{.}}'
+formulae '{{.}}'
 {{- else -}}
-brew '{{.name}}'{{if .args}}, args: {{.args}}{{end}}
+formulae '{{.name}}'{{if .args}}, args: {{.args}}{{end}}
 {{- end}}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
