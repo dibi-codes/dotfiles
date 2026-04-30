@@ -6,9 +6,9 @@ tap '{{ . }}'
 {{ end -}}
 {{ range .packages.darwin.formulae -}}
 {{- if (kindIs "string" .) -}}
-formulae '{{.}}'
+brew '{{.}}'
 {{- else -}}
-formulae '{{.name}}'{{if .args}}, args: {{.args}}{{end}}
+brew '{{.name}}'{{if .args}}, args: {{.args}}{{end}}
 {{- end}}
 {{ end -}}
 {{ range .packages.darwin.casks -}}
