@@ -15,7 +15,7 @@ defaults write NSGlobalDomain KeyRepeat -int 1 # was 2
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-defaults write NSGlobalDomain _HIHideMenuBar -bool true
+defaults write NSGlobalDomain _HIHideMenuBar -bool false
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.65098 0.85490 0.58431"
 #defaults write NSGlobalDomain AppleAccentColor -int 1
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
