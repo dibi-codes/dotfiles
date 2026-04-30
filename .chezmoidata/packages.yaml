@@ -9,8 +9,6 @@ packages:
       - 'fluxcd/tap'
       - 'go-swagger/go-swagger'
       - 'hashicorp/tap'
-      - 'homebrew/bundle'
-      - 'homebrew/services'
       - 'johanhaleby/kubetail'
       - 'koekeishiya/formulae'
       - 'krishkrosh/apps'
