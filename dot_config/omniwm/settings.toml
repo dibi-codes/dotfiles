@@ -1162,7 +1162,6 @@ monitorName = "Built-in Retina Display"
 outerGapTop = 47.0
 
 [[workspaces]]
-displayName = "🌐"
 id = "AD36F001-C57E-41A5-AC1D-DF5249D007F0"
 layoutType = "default"
 name = "1"
@@ -1171,7 +1170,6 @@ name = "1"
 type = "main"
 
 [[workspaces]]
-displayName = "📝"
 id = "454CECD4-5E9D-4ED1-95D7-979D48817F5F"
 layoutType = "default"
 name = "2"
@@ -1180,7 +1178,6 @@ name = "2"
 type = "main"
 
 [[workspaces]]
-displayName = "🔥"
 id = "ECE6BC9B-3E00-4AAE-B77F-9BA46338748E"
 layoutType = "default"
 name = "3"
@@ -1189,7 +1186,6 @@ name = "3"
 type = "main"
 
 [[workspaces]]
-displayName = "💬"
 id = "5953F2BF-A378-4266-91B2-287174C4FA4D"
 layoutType = "default"
 name = "4"
@@ -1202,7 +1198,6 @@ displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
 name = "Built-in Retina Display"
 
 [[workspaces]]
-displayName = "❤️"
 id = "A7D5E104-6985-4516-8ED5-07F144F2A33D"
 layoutType = "default"
 name = "5"
@@ -1215,7 +1210,7 @@ displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
 name = "Built-in Retina Display"
 
 [[workspaces]]
-displayName = "✉️"
+displayName = "M"
 id = "6C1F2A9E-7B4D-4E8A-9F3C-2D5E8A1B7C40"
 layoutType = "default"
 name = "6"
@@ -1228,7 +1223,7 @@ displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
 name = "Built-in Retina Display"
 
 [[workspaces]]
-displayName = "👾"
+displayName = "T"
 id = "D93B5E27-4A6C-4F1D-8E2B-7C9A0F3E6D51"
 layoutType = "default"
 name = "7"
