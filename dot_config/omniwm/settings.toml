@@ -1,4 +1,3 @@
-monitorBarOverrides = []
 monitorDwindleOverrides = []
 monitorNiriOverrides = []
 monitorOrientationOverrides = []
@@ -100,9 +99,9 @@ windowMoveEnabled = false
 windowMoveFingerCount = 4
 windowResizeEnabled = false
 windowResizeFingerCount = 3
-workspaceSwipeAxis = "vertical"
+workspaceSwipeAxis = "horizontal"
 workspaceSwipeEnabled = false
-workspaceSwipeFingerCount = 3
+workspaceSwipeFingerCount = 4
 
 [hiddenBar]
 enabled = true
@@ -171,7 +170,7 @@ red = 0.3
 animationDuration = 0.2
 autoHide = false
 backgroundBlurRadius = 0
-backgroundEffect = "standardBlur"
+backgroundEffect = "glassClear"
 enabled = true
 heightPercent = 50.0
 monitorMode = "focusedWindow"
@@ -224,12 +223,12 @@ backgroundOpacity = 0.1
 deduplicateAppIcons = false
 enabled = true
 excludedBundleIDs = []
-height = 24.0
+height = 32.0
 hideEmptyWorkspaces = false
 hideInNativeFullscreen = false
 hoverPreviewsEnabled = true
 notchActiveZoneWidth = 180.0
-notchMode = "fillLeftOfNotch"
+notchMode = "off"
 notificationBadgeRefreshIntervalSeconds = 5.0
 notificationBadges = "off"
 position = "overlappingMenuBar"
@@ -238,7 +237,7 @@ revealHoldMilliseconds = 200.0
 revealModifier = "off"
 showAccentHighlights = true
 showFloatingWindows = false
-showItemBackgrounds = true
+showItemBackgrounds = false
 showLabels = true
 solidBlackBackground = false
 systemStatsButton = true
@@ -1117,7 +1116,7 @@ binding = "Unassigned"
 id = "closeFocusedWindow"
 
 [[hotkeys]]
-binding = "Unassigned"
+binding = "Command+M"
 id = "openMenuAnywhere"
 
 [[hotkeys]]
@@ -1154,6 +1153,12 @@ id = "toggleOverview"
 [[hotkeys]]
 binding = "Unassigned"
 id = "toggleSystemStats"
+
+[[monitorBarOverrides]]
+id = "E6976A97-AF20-4D40-A050-6584A6BDBAD0"
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
+notchMode = "fillLeftOfNotch"
 
 [[monitorGapOverrides]]
 id = "186AF21B-10A6-4460-B137-A3DB84895972"
