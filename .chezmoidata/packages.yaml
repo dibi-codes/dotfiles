@@ -2,186 +2,332 @@ packages:
   darwin:
     taps:
       - '1password/tap'
+      - 'anomalyco/tap'
       - 'azure/kubelogin'
-      - 'cmacrae/formulae'
-      - 'derailed/popeye'
-      - 'felixkratz/formulae'
       - 'fluxcd/tap'
       - 'go-swagger/go-swagger'
       - 'hashicorp/tap'
       - 'johanhaleby/kubetail'
-      - 'koekeishiya/formulae'
-      - 'krishkrosh/apps'
-      - 'lusingander/tap'
-      - 'lusingander/tap'
       - 'metalbear-co/mirrord'
-      - 'nikitabobko/tap'
+      - 'nklmilojevic/sofka'
       - 'rest-sh/tap'
       - 'siderolabs/tap'
+      - 'vladdoster/formulae'
     formulae:
+      # Utility to check whether MAC addresses are already taken on a LAN
       - 'arping'
-      - 'awscli'
-      - 'azure-cli'
-      - 'bash'
-      - 'borders'
-      - 'chafa'
-      - 'chezmoi'
-      - 'cilium-cli'
-      - 'conftest'
-      - 'container'
-      - 'coreutils'
-      - 'cosign'
-      - 'crane'
-      - 'cryptography'
-      - 'cue'
-      - 'dnscontrol'
-      - 'dua-cli'
-      - 'dyff'
-      - 'fastfetch'
-      - 'ffmpeg'
-      - 'flux'
-      - 'git-quick-stats'
-      - 'git'
-      - 'glew'
-      - 'glow'
-      - 'gnu-sed'
-      - 'gnupg'
-      - 'go-swagger'
-      - 'go-task'
-      - 'go'
-      - 'graphviz'
-      - 'grep'
-      - 'helm'
-      - 'hexo'
-      - 'htop'
-      - 'hubble'
-      - 'ipatool'
-      - 'ipcalc'
-      - 'ipinfo-cli'
-      - 'iproute2mac'
-      - 'jq'
-      - 'k9s'
-      - 'krew'
-      - 'kubebuilder'
-      - 'kubecolor'
-      - 'kubeconform'
-      - 'kubelogin'
-      - 'kubernetes-cli'
-      - 'kubeseal'
-      - 'kubetail'
-      - 'kustomize'
-      - 'libepoxy'
-      - 'libpq'
-      - 'lima'
-      - 'links'
-      - 'lsusb'
-      - 'lua'
-      - 'luv'
-      - 'lynx'
+      # Extremely Fast Compression algorithm
       - 'lz4'
+      # Official Amazon AWS command-line interface
+      - 'awscli'
+      # Bourne-Again SHell, a UNIX command interpreter
+      - 'bash'
+      # Versatile and fast Unicode/ASCII/ANSI graphics renderer
+      - 'chafa'
+      # Manage your dotfiles across multiple diverse machines, securely
+      - 'chezmoi'
+      # CLI to install, manage & troubleshoot Kubernetes clusters running Cilium
+      - 'cilium-cli'
+      # Test your configuration files using Open Policy Agent
+      - 'conftest'
+      # Create and run Linux containers using lightweight virtual machines
+      - 'container'
+      # Manage Apple Container with Docker Compose files
+      - 'container-compose'
+      # GNU File, Shell, and Text utilities
+      - 'coreutils'
+      # Container Signing
+      - 'cosign'
+      # Tool for interacting with remote images and registries
+      - 'crane'
+      # Cryptographic recipes and primitives for Python
+      - 'cryptography'
+      # Validate and define text-based and dynamic configuration
+      - 'cue'
+      # Synchronize your DNS to multiple providers from a simple DSL
+      - 'dnscontrol'
+      # View disk space usage and delete unwanted data, fast
+      - 'dua-cli'
+      # Diff tool for YAML files, and sometimes JSON
+      - 'dyff'
+      # Like neofetch, but much faster because written mostly in C
+      - 'fastfetch'
+      # Play, record, convert, and stream select audio and video codecs
+      - 'ffmpeg'
+      # Distributed revision control system
+      - 'git'
+      # Simple and efficient way to access statistics in git
+      - 'git-quick-stats'
+      # OpenGL Extension Wrangler Library
+      - 'glew'
+      # Render markdown on the CLI
+      - 'glow'
+      # GNU implementation of the famous stream editor
+      - 'gnu-sed'
+      # GNU version of the tar archiving utility
+      - 'gnu-tar'
+      # GNU Privacy Guard (OpenPGP)
+      - 'gnupg'
+      # Open source programming language to build simple/reliable/efficient software
+      - 'go'
+      # Task is a task runner/build tool that aims to be simpler and easier to use
+      - 'go-task'
+      # Graph visualization software from AT&T and Bell Labs
+      - 'graphviz'
+      # GNU grep, egrep and fgrep
+      - 'grep'
+      # Kubernetes package manager
+      - 'helm'
+      # Cryptography and SSL/TLS Toolkit
+      - 'openssl-3'
+      # Fast, simple & powerful blog framework
+      - 'hexo'
+      # Library for communicating with USB and Bluetooth HID devices
+      - 'hidapi'
+      # Improved top (interactive process viewer)
+      - 'htop'
+      # Network, Service & Security Observability for Kubernetes using eBPF
+      - 'hubble'
+      # CLI tool for searching and downloading app packages from the iOS App Store
+      - 'ipatool'
+      # Calculate various network masks, etc. from a given IP address
+      - 'ipcalc'
+      # Official CLI for the IPinfo IP Address API
+      - 'ipinfo-cli'
+      # CLI wrapper for basic network utilities on macOS - ip command
+      - 'iproute2mac'
+      # Lightweight and flexible command-line JSON processor
+      - 'jq'
+      # Kubernetes command-line interface
+      - 'kubernetes-cli'
+      # Package manager for kubectl plugins
+      - 'krew'
+      # SDK for building Kubernetes APIs using CRDs
+      - 'kubebuilder'
+      # Colorize your kubectl output
+      - 'kubecolor'
+      # FAST Kubernetes manifests validator, with support for Custom Resources!
+      - 'kubeconform'
+      # Kubernetes controller and tool for one-way encrypted Secrets
+      - 'kubeseal'
+      # Logging tool for Kubernetes with a real-time web dashboard
+      - 'kubetail'
+      # Template-free customization of Kubernetes YAML manifests
+      - 'kustomize'
+      # Library for handling OpenGL function pointer management
+      - 'libepoxy'
+      # Postgres C API library
+      - 'libpq'
+      # Linux virtual machines
+      - 'lima'
+      # Additional guest agents for Lima
+      - 'lima-additional-guestagents'
+      # Lynx-like WWW browser that supports tables, menus, etc.
+      - 'links'
+      # List USB devices, just like the Linux lsusb command
+      - 'lsusb'
+      # Powerful, lightweight programming language
+      - 'lua'
+      # Bare libuv bindings for lua
+      - 'luv'
+      # Text-based web browser
+      - 'lynx'
+      # Utility for directing compilation
       - 'make'
+      # Easily convert Marp Markdown files into static HTML/CSS, PDF, PPT and images
       - 'marp-cli'
+      # Mac App Store command-line interface
       - 'mas'
-      - 'minio'
-      - 'mirrord'
+      # MongoDB Shell to connect, configure, query, and work with your MongoDB database
       - 'mongosh'
+      # 'traceroute' and 'ping' in a single tool
       - 'mtr'
-      - 'mysql'
+      # Open source relational database management system
+      - 'mysql-client'
+      # Ambitious Vim-fork focused on extensibility and agility
       - 'neovim'
+      # Port scanning utility for large networks
       - 'nmap'
+      # Retrieves currently playing media, and simulates media actions
       - 'nowplaying-cli'
+      # Modern shell for the GitHub era
       - 'nushell'
+      # Interactive GPU process monitor
       - 'nvtop'
+      # Development kit for the Java programming language
       - 'openjdk'
+      # OpenBSD freely-licensed SSH connectivity tools
       - 'openssh'
-      - 'openssl'
-      - 'openssl@3'
+      # Command-line client for OpenStack
       - 'openstackclient'
+      # Utilities to encode, inspect, and decode .opus files
       - 'opus-tools'
+      # 7-Zip (high compression file archiver) implementation
       - 'p7zip'
+      # Execute binaries from Python packages in isolated environments
+      - 'pipx'
+      # Package compiler and linker metadata toolkit
       - 'pkgconf'
-      - 'popeye'
+      # Command-line shell and scripting language
       - 'powershell'
+      # Password generator
       - 'pwgen'
-      - 'python'
-      - 'python@3.10'
+      # Interpreted, interactive, object-oriented programming language
       - 'python@3.11'
+      # QR Code generation
+      - 'qrencode'
+      # Rsync for cloud storage
       - 'rclone'
-      - 'renovate'
+      # CLI tool for interacting with REST-ish HTTP APIs
       - 'restish'
+      # Search tool like grep and The Silver Searcher
+      - 'ripgrep'
+      # Safe, concurrent, practical language
       - 'rust'
+      # Static analysis and lint tool, for (ba)sh scripts
       - 'shellcheck'
+      # Prettier way to inspect network connections
       - 'snitch'
-      - 'speedtest-cli'
+      # Crypto and x509 Swiss-Army-Knife
       - 'step'
+      # High-performance system programming language
       - 'swift'
+      # CLI for out-of-band management of Kubernetes nodes created by Talos
       - 'talosctl'
+      # User interface to the TELNET protocol
       - 'telnet'
+      # Command-line interface for running and interacting with Temporal Server and UI
       - 'temporal'
+      # Managing Terraform stacks with change detections and code generations
+      - 'terramate'
+      # Terraform version manager inspired by rbenv
       - 'tfenv'
+      # Display directories as trees (with optional color/HTML output)
       - 'tree'
+      # Vulnerability scanner for container images, file systems, and Git repos
       - 'trivy'
+      # Command-line unarchiving tools supporting multiple formats
       - 'unar'
+      # URL extractor/launcher
       - 'urlview'
-      - 'vault'
+      # Disaster recovery for Kubernetes resources and persistent volumes
       - 'velero'
+      # Ncurses-based file manager with vi-like keybindings
       - 'vifm'
+      # Executes a program periodically, showing output fullscreen
       - 'watch'
+      # Library to create, extract, and modify Windows Imaging files
       - 'wimlib'
+      # Command-line XML and HTML beautifier and content extractor
       - 'xq'
+      # Process YAML, JSON, XML, CSV and properties documents from the CLI
       - 'yq'
+      # General-purpose lossless data-compression library
       - 'zlib'
+      # The AI coding agent built for the terminal.
+      - 'opencode'
+      # A Kubernetes credential (exec) plugin implementing azure authentication
+      - 'kubelogin'
+      # CLI for GitOps continuous delivery
+      - 'flux'
+      # Toolkit to work with swagger for golang
+      - 'go-swagger'
+      # Vault
+      - 'vault'
+      # Connect your local process and your cloud environment
+      - 'mirrord'
+      # Kubernetes TUI, reimagined in Rust
+      - 'sofka'
     casks:
+      # Real-time strategy game
       - '0-ad'
+      # Command-line interface for 1Password
       - '1password-cli'
-      - 'adobe-acrobat-reader'
-      - 'aerospace'
+      # Microsoft Azure CLI 2.0
+      - 'azure-cli'
+      # Tool to flash OS images to SD cards & USB drives
       - 'balenaetcher'
+      # Web browser focusing on privacy
       - 'brave-browser'
+      # Web security testing toolkit
+      - 'burp-suite'
+      # E-books management software
       - 'calibre'
+      # Terminal-based AI coding assistant
+      - 'claude-code'
+      # Server and cloud storage browser
       - 'cyberduck'
+      # Universal database tool and SQL client
       - 'dbeaver-community'
+      # File sharing solution
       - 'dropshare'
-      - 'font-fira-code-nerd-font'
       - 'font-fira-code'
+      - 'font-fira-code-nerd-font'
       - 'font-hack-nerd-font'
       - 'font-jetbrains-mono-nerd-font'
       - 'font-meslo-lg-nerd-font'
       - 'font-powerline-symbols'
       - 'font-sf-mono'
       - 'font-sf-pro'
+      # Terminal emulator that uses platform-native UI and GPU acceleration
       - 'ghostty@tip'
-      - 'gimp'
-      - 'gcloud-cli'
+      # Tools to protect your emails and files
       - 'gpg-suite@nightly'
+      # Chromium-based web browser
+      - 'helium-browser'
+      # Apple Device Configuration Profile Editor
       - 'imazing-profile-editor'
+      # HTTP and GraphQL Client
       - 'insomnia'
+      # Password manager app
       - 'keepassxc'
+      # Discover, download, and run local LLMs
+      - 'lm-studio'
+      # Spreadsheet software
       - 'microsoft-excel'
+      # Email client
       - 'microsoft-outlook'
+      # Presentation software
       - 'microsoft-powerpoint'
+      # Meet, chat, call, and collaborate in just one place
       - 'microsoft-teams'
+      # Word processor
       - 'microsoft-word'
+      # Interactive tool for analyzing MongoDB data
       - 'mongodb-compass'
+      # Visual tool to design, develop and administer MySQL servers
       - 'mysqlworkbench'
+      # Network monitor
       - 'netiquette'
+      # Tiling window manager
+      - 'omniwm'
       - 'powershell'
+      # HTTP debugging proxy
       - 'proxyman'
+      # HTTP client that helps testing and describing APIs
       - 'rapidapi'
+      # Photoshop alternative
+      - 'robbietilton-compositor'
+      # Tool that provides consistent, highly configurable symbols for apps
       - 'sf-symbols'
+      # Instant messaging application focusing on security
       - 'signal'
+      # Team communication and collaboration software
       - 'slack'
+      # Music streaming service
       - 'spotify'
+      # Mesh VPN based on WireGuard
       - 'tailscale-app'
-      - 'trackweight'
+      # Virtual machines UI using QEMU
       - 'utm'
-      - 'via'
+      # Open-source code editor
       - 'visual-studio-code'
+      # Multimedia player
       - 'vlc'
+      # Network protocol analyzer
       - 'wireshark-app'
+      # Full-featured companion app to the YubiKey
       - 'yubico-authenticator'
-      - 'stu'
-      # - '1password@7'
     mas:
       - 948660805 # AusweisApp
       - 1451685025 # WireGuard
