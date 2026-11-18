@@ -5,13 +5,13 @@
 echo "Setup macOS defaults..."
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1 # enable airdrop over wired ethernet
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.spaces spans-displays -bool true
+defaults write com.apple.spaces spans-displays -bool false # Displays have separate Spaces
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock "mru-spaces" -bool false # Do NOT reorder Spaces based on most recent use
 defaults write com.apple.dock "static-only" -bool true # Only show opened apps in Dock.
 defaults write com.apple.dock "expose-group-apps" -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false # Disable window animations
-defaults write NSGlobalDomain KeyRepeat -int 1 # was 2
+defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -20,8 +20,8 @@ defaults write NSGlobalDomain _HIHideMenuBar -bool false
 #defaults write NSGlobalDomain AppleAccentColor -int 1
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool false
-defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5 # Mouse speed
-defaults write NSGlobalDomain com.apple.mouse.linear -bool false
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 0.5 # Mouse speed
+defaults write NSGlobalDomain com.apple.mouse.linear -bool true # No mouse acceleration
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 # defaults write com.apple.screencapture location -string "$HOME/Desktop"
 defaults write com.apple.screencapture disable-shadow -bool true
@@ -39,12 +39,6 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv" # List view
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool true
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Make all buttons tabable
 
@@ -54,4 +48,4 @@ defaults write com.apple.WindowManager EnableTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTopTilingByEdgeDrag -bool false
 defaults write com.apple.WindowManager EnableTilingOptionAccelerator -bool false
 
-killall Dock && killall Finder
+killall Dock Finder || true
