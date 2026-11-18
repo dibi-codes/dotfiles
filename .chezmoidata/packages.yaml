@@ -75,6 +75,8 @@ packages:
       - 'openssl@3'
       # Fast, simple & powerful blog framework
       - 'hexo'
+      # Library for communicating with USB and Bluetooth HID devices (used by led-name-badge-ls32)
+      - 'hidapi'
       # Improved top (interactive process viewer)
       - 'htop'
       # Network, Service & Security Observability for Kubernetes using eBPF
