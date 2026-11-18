@@ -1,5 +1,0 @@
-#!/bin/bash
-
-{{ if (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "endeavour")) }}
-sudo pacman -Sy --noconfirm {{ .packages.linux.arch | join " " }}
-{{ end -}}

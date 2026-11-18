@@ -1,0 +1,37 @@
+# This is Git's per-user configuration file.
+[core]
+  excludesfile = "~/.gitignore"
+{{- if (and (hasKey . "name") (hasKey . "email")) }}
+[user]
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+{{- end }}
+{{- if (and (hasKey . "name") (hasKey . "email") (hasKey . "signingkey")) }}
+  signingkey = {{ .signingkey }}
+[commit]
+  gpgsign = true
+{{- end }}
+[pull]
+  rebase = true
+[gpg]
+{{- if hasPrefix "ssh-" (get . "signingkey" | default "") }}
+	format = ssh
+{{- else }}
+	program = gpg
+{{- end }}
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[init]
+	defaultBranch = main
+{{- if hasKey . "gitInsteadOf" }}
+{{ range $url, $insteadOf := .gitInsteadOf }}
+[url {{ $url | quote }}]
+	insteadOf = {{ $insteadOf }}
+{{- end }}
+{{- end }}
+{{- if and (eq .chezmoi.os "darwin") (hasPrefix "ssh-" (get . "signingkey" | default "")) }}
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+{{- end }}

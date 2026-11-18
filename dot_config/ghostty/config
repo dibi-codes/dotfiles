@@ -10,7 +10,6 @@ mouse-hide-while-typing = true
 scrollback-limit = 50_000_000
 
 copy-on-select = clipboard
-app-notifications = true
 
 unfocused-split-opacity = 1
 split-divider-color = green
@@ -29,6 +28,8 @@ window-colorspace = "display-p3"
 app-notifications = no-clipboard-copy
 
 cursor-style = block
+
+keybind = cmd+enter=toggle_split_zoom
 
 keybind = ctrl+b>left=goto_split:left
 keybind = ctrl+b>down=goto_split:bottom

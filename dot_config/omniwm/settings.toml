@@ -134,6 +134,14 @@ displayUUID = "9C124A58-8944-462F-8080-33EF592210F4"
 name = "DELL U3824DW"
 
 [[monitors.ranking]]
+displayUUID = "BEDCE7AF-C20D-4954-BBEB-B2A2BDD4E93B"
+name = "HP Z27"
+
+[[monitors.ranking]]
+displayUUID = "80485376-933C-42DA-BF88-DD6AB6318E37"
+name = "EA244WMi"
+
+[[monitors.ranking]]
 displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
 name = "Built-in Retina Display"
 
@@ -224,6 +232,27 @@ id = "426EBEA8-BE0A-4BA6-9D24-77155A583C40"
 
 [[routing.arrangements.monitors]]
 gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
+monitorName = "Built-in Retina Display"
+
+[[routing.arrangements]]
+id = "47D5FA55-03C7-4EF8-931D-1957FAEF441B"
+
+[[routing.arrangements.monitors]]
+gridColumn = 1
+gridRow = 0
+monitorDisplayUUID = "BEDCE7AF-C20D-4954-BBEB-B2A2BDD4E93B"
+monitorName = "HP Z27"
+
+[[routing.arrangements.monitors]]
+gridColumn = 0
+gridRow = 0
+monitorDisplayUUID = "80485376-933C-42DA-BF88-DD6AB6318E37"
+monitorName = "EA244WMi"
+
+[[routing.arrangements.monitors]]
+gridColumn = 2
 gridRow = 0
 monitorDisplayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
 monitorName = "Built-in Retina Display"
@@ -1368,8 +1397,4 @@ layoutType = "default"
 name = "7"
 
 [workspaces.monitorAssignment]
-type = "specificDisplay"
-
-[workspaces.monitorAssignment.output]
-displayUUID = "37D8832A-2D66-02CA-B9F7-8F30A301B230"
-name = "Built-in Retina Display"
+type = "secondary"

@@ -7,7 +7,6 @@ packages:
       - 'fluxcd/tap'
       - 'go-swagger/go-swagger'
       - 'hashicorp/tap'
-      - 'johanhaleby/kubetail'
       - 'metalbear-co/mirrord'
       - 'nklmilojevic/sofka'
       - 'rest-sh/tap'
@@ -79,7 +78,7 @@ packages:
       # Kubernetes package manager
       - 'helm'
       # Cryptography and SSL/TLS Toolkit
-      - 'openssl-3'
+      - 'openssl@3'
       # Fast, simple & powerful blog framework
       - 'hexo'
       # Library for communicating with USB and Bluetooth HID devices
@@ -225,22 +224,24 @@ packages:
       # General-purpose lossless data-compression library
       - 'zlib'
       # The AI coding agent built for the terminal.
-      - 'opencode'
+      - 'anomalyco/tap/opencode'
       # A Kubernetes credential (exec) plugin implementing azure authentication
-      - 'kubelogin'
+      - 'azure/kubelogin/kubelogin'
       # CLI for GitOps continuous delivery
-      - 'flux'
+      - 'fluxcd/tap/flux'
       # Toolkit to work with swagger for golang
-      - 'go-swagger'
+      - 'go-swagger/go-swagger/go-swagger'
       # Vault
-      - 'vault'
+      - 'hashicorp/tap/vault'
       # Connect your local process and your cloud environment
-      - 'mirrord'
+      - 'metalbear-co/mirrord/mirrord'
       # Kubernetes TUI, reimagined in Rust
-      - 'sofka'
+      - 'nklmilojevic/sofka/sofka'
     casks:
       # Real-time strategy game
       - '0-ad'
+      # Password manager that keeps all passwords secure behind one password
+      - '1password'
       # Command-line interface for 1Password
       - '1password-cli'
       # Microsoft Azure CLI 2.0
@@ -301,7 +302,6 @@ packages:
       - 'netiquette'
       # Tiling window manager
       - 'omniwm'
-      - 'powershell'
       # HTTP debugging proxy
       - 'proxyman'
       # HTTP client that helps testing and describing APIs

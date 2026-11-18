@@ -1,10 +1,10 @@
+README.md
+
 {{ if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
-.config/yabai
-.config/skhd
+.config/omniwm
 {{- end }}
 
 {{ if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
-.config/sketchybar/helpers/event_providers/*/bin/**
 {{- end }}

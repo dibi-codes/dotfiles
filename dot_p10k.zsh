@@ -1341,8 +1341,8 @@
   #   typeset -g POWERLEVEL9K_TERRAFORM_TEST_VISUAL_IDENTIFIER_EXPANSION='⭐'
   #   typeset -g POWERLEVEL9K_TERRAFORM_TEST_CONTENT_EXPANSION='> ${P9K_CONTENT} <'
   typeset -g POWERLEVEL9K_TERRAFORM_CLASSES=(
-      # '*prod*'  PROD    # These values are examples that are unlikely
-      # '*test*'  TEST    # to match your needs. Customize them as needed.
+      '*prod*'  PROD    # These values are examples that are unlikely
+      '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'         OTHER)
   typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND=4
   # typeset -g POWERLEVEL9K_TERRAFORM_OTHER_VISUAL_IDENTIFIER_EXPANSION='⭐'

@@ -1,0 +1,19 @@
+{{- $name := promptStringOnce . "name" "Full name (git)" -}}
+{{- $email := promptStringOnce . "email" "Email (git)" -}}
+{{- $signingkey := promptStringOnce . "signingkey" "Git signing key (SSH public key or GPG key ID, empty for none)" -}}
+[data]
+  name = {{ $name | quote }}
+  email = {{ $email | quote }}
+{{- if $signingkey }}
+  signingkey = {{ $signingkey | quote }}
+{{- end }}
+{{- /* Optional, machine-local only. Add manually to ~/.config/chezmoi/chezmoi.toml */}}
+{{- with get . "goprivate" }}
+  goprivate = {{ . | quote }}
+{{- end }}
+{{- with get . "gitInsteadOf" }}
+  [data.gitInsteadOf]
+{{- range $url, $insteadOf := . }}
+    {{ $url | quote }} = {{ $insteadOf | quote }}
+{{- end }}
+{{- end }}

@@ -6,3 +6,5 @@ node_modules
 .idea
 *id_rsa*
 *.key
+
+**/.claude/settings.local.json

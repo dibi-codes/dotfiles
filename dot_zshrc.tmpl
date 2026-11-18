@@ -102,10 +102,11 @@ plugins=(
   vault-credentials)
 
 {{- if eq .chezmoi.os "darwin" }}
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"
 {{- else if eq .chezmoi.os "linux" }}
 FPATH="/usr/share/zsh/site-functions:${FPATH}"
 {{- end}}
+fpath=($fpath ~/.zsh/completion)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -125,16 +126,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export TERM=xterm-256color
 
-export GOPRIVATE=dev.azure.com
+export GOPRIVATE={{ get . "goprivate" | default "dev.azure.com" }}
 export GOPATH=~/Go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export FLUX_FORWARD_NAMESPACE="flux"
 
 export HOMEBREW_AUTO_UPDATE_SECS=86400
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -144,28 +144,28 @@ export EDITOR="vim"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+{{- if eq .chezmoi.os "darwin" }}
+alias docker='container'
+{{- else }}
 alias docker='nerdctl'
+{{- end }}
 alias wget='curl -O'
 alias fastcommit='git commit . -m "$(curl -s https://whatthecommit.com/index.txt)"'
 alias watch="watch "
-
-{{- if eq .chezmoi.os "darwin" }}
-alias nerdctl="nerdctl.lima"
-compdef _nerdctl "nerdctl.lima"
-{{- end}}
+alias k9s="sofka"
 
 {{- if eq .chezmoi.os "linux" }}
 alias open="xdg-open"
 {{- end }}
 
 command -v pwgen >/dev/null && alias pwgencp='echo -n "$(pwgen -scn 32 1)" | pbcopy'
-command -v gls >/dev/null && alias ls="gls --color=always"
-
+alias ls='ls --color=auto'
 {{- if eq .chezmoi.os "darwin" }}
+
 # yay brew
 yay() {
   if [[ $1 == "" ]]; then
-    brew upgrade
+    brew update && brew upgrade
   else
     brew $@
   fi
@@ -202,7 +202,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 bindkey '^ ' autosuggest-accept
 
 zstyle ':completion:*' special-dirs true
-fpath=($fpath ~/.zsh/completion)
 
 autoload -U +X bashcompinit && bashcompinit
 
@@ -210,7 +209,7 @@ autoload -U +X bashcompinit && bashcompinit
 command -v flux >/dev/null && . <(flux completion zsh)
 
 ## Azure CLI Completion
-if type "/opt/homebrew/etc/bash_completion.d/az" > /dev/null; then
+if [[ -r "/opt/homebrew/etc/bash_completion.d/az" ]]; then
   source /opt/homebrew/etc/bash_completion.d/az
 fi
 
@@ -225,3 +224,15 @@ bindkey '^[[B' down-line-or-search
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+{{- if eq .chezmoi.os "darwin" }}
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+{{- end }}
+
+
+[[ -f ~/.config/op/plugins.sh ]] && source ~/.config/op/plugins.sh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:{{ .chezmoi.homeDir }}/.lmstudio/bin"
+# End of LM Studio CLI section
+
