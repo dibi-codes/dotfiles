@@ -60,9 +60,7 @@ export HOMEBREW_AUTO_UPDATE_SECS=86400
 export EDITOR="nvim"
 
 # aliases
-{{- if eq .chezmoi.os "darwin" }}
-alias docker='container'
-{{- else }}
+{{- if eq .chezmoi.os "linux" }}
 alias docker='nerdctl'
 {{- end }}
 alias wget='curl -O'
@@ -77,6 +75,17 @@ alias open="xdg-open"
 command -v pwgen >/dev/null && alias pwgencp='echo -n "$(pwgen -scn 32 1)" | pbcopy'
 alias ls='ls --color=auto'
 {{- if eq .chezmoi.os "darwin" }}
+
+unalias docker 2>/dev/null
+
+# Azure Container Registry login for Apple `container` (az acr login needs a docker binary)
+acr-login() {
+  local name=${1:?usage: acr-login <registry-name>}
+  az acr login --name "$name" --expose-token --query accessToken --output tsv \
+    | container registry login \
+        --username 00000000-0000-0000-0000-000000000000 \
+        --password-stdin "$name.azurecr.io"
+}
 
 # yay brew
 yay() {
